@@ -1,15 +1,16 @@
 package contacts;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import contacts.annotations.OutputIntercept;
 
 import java.util.List;
-@Component
-public class ContactServiceImpl implements ContactService{
 
-    @Autowired
+public class ContactServiceImpl implements ContactService{
     private ContactRepository repository;
 
+    public ContactServiceImpl(ContactRepository repository) {
+        this.repository = repository;
+    }
+    @OutputIntercept
     public List<Contact> getAll(){
         return this.repository.findAll();
     }

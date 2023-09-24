@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
-@Component
+
 public class ContactRepositoryImpl implements ContactRepository{
 
     List<Contact> tempLib = new ArrayList<>();
